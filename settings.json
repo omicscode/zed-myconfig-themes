@@ -1,0 +1,329 @@
+{
+    "icon_theme": "JetBrains New UI Icons (Dark)",
+    "autosave": "on_focus_change",
+    "base_keymap": "TextMate",
+    "buffer_font_size": 22,
+    "buffer_font_family": "JetBrains Mono",
+    "cursor_blink": true,
+    "current_line_highlight": "gutter",
+    "enable_language_server": true,
+    "formatter": "language_server",
+    "format_on_save": "on",
+    "git": {
+        "inline_blame": {
+            "enabled": true
+        }
+    },
+    "completions": {
+        "words": "fallback",
+        "lsp": true,
+        "lsp_fetch_timeout_ms": 0,
+        "lsp_insert_mode": "replace_suffix"
+    },
+    "diagnostics": {
+        "include_warnings": true,
+        "inline": {
+            "enabled": true,
+            "padding": 6,
+            "min_column": 10
+        }
+    },
+    "indent_guides": {
+        "enabled": true,
+        "line_width": 1,
+        "active_line_width": 1,
+        "coloring": "fixed",
+        "background_coloring": "disabled"
+    },
+    "minimap": {
+        "show": "always",
+        "thumb": "always",
+        "thumb_border": "left_open",
+        "current_line_highlight": "all"
+    },
+    "tabs": {
+        "close_position": "right",
+        "file_icons": true,
+        "git_status": true,
+        "activate_on_close": "history",
+        "show_close_button": "hover",
+        "show_diagnostics": "all"
+    },
+    "inlay_hints": {
+        "enabled": true,
+        "show_type_hints": true,
+        "show_parameter_hints": true,
+        "show_other_hints": true
+    },
+    "languages": {
+        "JSON": {
+            "tab_size": 2
+        },
+        "Elixir": {
+            "language_servers": [
+                "lexical",
+                "!elixir-ls",
+                "..."
+            ],
+            "format_on_save": {
+                "external": {
+                    "command": "mix",
+                    "arguments": [
+                        "format",
+                        "--stdin-filename",
+                        "{buffer_path}",
+                        "-"
+                    ]
+                }
+            }
+        },
+        "JavaScript": {
+            "tab_size": 2,
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.biome": true,
+                "source.organizeImports.biome": true
+            }
+        },
+        "R": {
+            "language_servers": [
+                "air",
+                "r_language_server"
+            ],
+            "format_on_save": "on"
+        },
+        "TypeScript": {
+            "language_servers": [
+                "typescript-language-server",
+                "!vtsls",
+                "...",
+                "biome"
+            ],
+            "formatter": {
+                "language_server": {
+                    "name": "biome"
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.biome": true,
+                "source.organizeImports.biome": true
+            }
+        },
+        "TSX": {
+            "language_servers": [
+                "typescript-language-server",
+                "!vtsls",
+                "...",
+                "biome"
+            ],
+            "code_actions_on_format": {
+                "source.fixAll.biome": true,
+                "source.organizeImports.biome": true
+            }
+        },
+        "YAML": {
+            "tab_size": 2
+        },
+        "Python": {
+            "format_on_save": "on",
+            "language_servers": [
+                "pyright",
+                "ruff"
+            ]
+        },
+        "Rust": {
+            "format_on_save": "on",
+            "language_servers": [
+                "rust-analyzer"
+            ]
+        }
+    },
+    "lsp": {
+        "elixir-ls": {
+            "settings": {
+                "dialyzerEnabled": true
+            }
+        },
+        "rust-analyzer": {
+            "initialization_options": {
+                "cargo": {
+                    "allFeatures": true,
+                    "buildScripts": {
+                        "enable": true,
+                        "rebuildOnSave": true
+                    }
+                },
+                "rust-analyzer": {
+                    "initialization_options": {
+                        "check": {
+                            "command": "clippy"
+                        }
+                    }
+                },
+                "diagnostics": {
+                    "button": true,
+                    "include_warnings": true,
+                    "inline": {
+                        "enabled": true,
+                        "update_debounce_ms": 150,
+                        "padding": 4,
+                        "min_column": 0,
+                        "max_severity": null
+                    },
+                    "cargo": null
+                },
+                "rustfmt": {
+                    "extraArgs": [
+                        "+nightly"
+                    ]
+                },
+                "check": {
+                    "allTargets": true,
+                    "command": "clippy"
+                },
+                "checkOnSave": true,
+                "hover": {
+                    "references": {
+                        "enabled": true
+                    }
+                },
+                "imports": {
+                    "granularity": {
+                        "group": "module"
+                    },
+                    "prefix": "self",
+                    "merge": {
+                        "glob": false
+                    }
+                },
+                "inlayHints": {
+                    "maxLength": 10,
+                    "lifetimeElisionHints": {
+                        "useParameterNames": true,
+                        "enable": "skip_trivial"
+                    },
+                    "closureReturnTypeHints": {
+                        "enable": "always"
+                    }
+                },
+                "procMacro": {
+                    "enable": true
+                },
+                "formatter": [
+                    {
+                        "language_server": {
+                            "name": "rust-analyzer"
+                        }
+                    },
+                    {
+                        "external": {
+                            "command": "sed",
+                            "arguments": [
+                                "-e",
+                                "s/ *$//"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "ruff": {
+            "initialization_options": {
+                "settings": {
+                    "configuration": "ruff.toml"
+                }
+            }
+        },
+        "pyright": {
+            "settings": {
+                "python": {
+                    "pythonPath": "usr/bin/python"
+                }
+            }
+        },
+        "vtsls": {
+            "settings": {
+                // For JavaScript:
+                "javascript": {
+                    "inlayHints": {
+                        "parameterNames": {
+                            "enabled": "all",
+                            "suppressWhenArgumentMatchesName": false
+                        },
+                        "parameterTypes": {
+                            "enabled": true
+                        },
+                        "variableTypes": {
+                            "enabled": true,
+                            "suppressWhenTypeMatchesName": true
+                        },
+                        "propertyDeclarationTypes": {
+                            "enabled": true
+                        },
+                        "functionLikeReturnTypes": {
+                            "enabled": true
+                        },
+                        "enumMemberValues": {
+                            "enabled": true
+                        }
+                    }
+                },
+                // For TypeScript:
+                "typescript": {
+                    "inlayHints": {
+                        "parameterNames": {
+                            "enabled": "all",
+                            "suppressWhenArgumentMatchesName": false
+                        },
+                        "parameterTypes": {
+                            "enabled": true
+                        },
+                        "variableTypes": {
+                            "enabled": true,
+                            "suppressWhenTypeMatchesName": true
+                        },
+                        "propertyDeclarationTypes": {
+                            "enabled": true
+                        },
+                        "functionLikeReturnTypes": {
+                            "enabled": true
+                        },
+                        "enumMemberValues": {
+                            "enabled": true
+                        }
+                    }
+                }
+            }
+        },
+        "typescript-language-server": {
+            "initialization_options": {
+                "preferences": {
+                    "includeInlayParameterNameHints": "all",
+                    "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+                    "includeInlayFunctionParameterTypeHints": true,
+                    "includeInlayVariableTypeHints": true,
+                    "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+                    "includeInlayPropertyDeclarationTypeHints": true,
+                    "includeInlayFunctionLikeReturnTypeHints": true,
+                    "includeInlayEnumMemberValueHints": true
+                }
+            }
+        }
+    },
+    "terminal": {
+        "font_family": "JetBrains Mono",
+        "blinking": "on"
+    },
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "theme": "Catppuccin Frappé",
+    "tab_size": 4,
+    "ui_font_size": 20,
+    "vim_mode": false
+}
